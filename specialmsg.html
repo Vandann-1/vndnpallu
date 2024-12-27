@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            background-color: #ffccff; /* Light pink background */
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            color: #d5006d; /* Darker pink for text */
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 4em; /* Increased font size */
+            margin-top: 50px;
+            animation: fadeIn 2s, bounce 1s infinite; /* Added bounce animation */
+        }
+        .poem {
+            font-size: 1.5em;
+            margin: 20px;
+            line-height: 1.6; /* Improved readability */
+            animation: moveUpDown 3s infinite; /* Animation for moving up and down */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-30px); }
+            60% { transform: translateY(-15px); }
+        }
+        @keyframes moveUpDown {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .heart {
+            font-size: 6em; /* Increased heart size */
+            color: #ff69b4; /* Hot pink for heart */
+            animation: heartbeat 1s infinite, swing 2s infinite; /* Added swing animation */
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        @keyframes swing {
+            0% { transform: rotate(0deg); }
+            20% { transform: rotate(10deg); }
+            40% { transform: rotate(-10deg); }
+            60% { transform: rotate(5deg); }
+            80% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #d5006d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff69b4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Birthday, My Love!</h1>
+    <div class="heart">❤️</div>
+    <p>On this special day, I want you to know how much you mean to me.</p>
+    <div class="poem" id="poem">
+        <p>tujhe janta hoon me bas tera naam pukaar nahi pata<br>
+        tujhe janta hoon me bas tera naam pukaar nahi pata<br>
+        sochta hu ke na sochu tere baare me,<br>
+        par kya karu mujhse raha bhi toh nhi jata<br>
+        kaise batau? teri haar baate mujhe pasand hai<br>
+        kaise batau? teri awaaz me hi ek dunn hai<br>
+        kaise batau? teri hasi ka voh pyaara naasha<br>
+        chamakti hue tu jaise meri half moon hai<br>
+        kya likhu teri taaref me aaj?<br>
+        ke mere kitabo ke paane baare<br>
+        kaise bachau khudko teri khubsurti se ?<br>
+        ke tujhe bin jaane hi <br>
+        tujhr maar gye ........</p>
+    </div>
+    <button onclick="toggleAnimation()">Stop Animation</button>
+    <div>
+        <p>Enjoy the audio message below:</p>
+        <audio controls>
+            <source src="https://drive.google.com/uc?export=download&id=1AV2sdbXSr4nMccdHWsXY2TpTNBGlS7Uq" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <script>
+        function toggleAnimation() {
+            const poem = document.getElementById('poem');
+            if (poem.style.animationPlayState === 'paused') {
+                poem.style.animationPlayState = 'running';
+                document.querySelector('button').textContent = 'Stop Animation';
+            } else {
+                poem.style.animationPlayState = 'paused';
+                document.querySelector('button').textContent = 'Start Animation';
+            }
+        }
+    </script>
+</body>
+</html>
